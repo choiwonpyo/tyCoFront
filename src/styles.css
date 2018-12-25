@@ -1,0 +1,72 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+html{
+  height: 100vh;
+}
+body{
+  padding: 0;
+  margin: 0;
+}
+button {
+  cursor: pointer;
+}
+/*
+.drag-border {
+  border: #ff525b dashed 2px;
+}
+
+.drag-handle {
+  cursor: move; !* fallback if grab cursor is unsupported *!
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+
+!* Droppable *!
+
+.drag-hint-border {
+  border: #3c763d dashed 2px;
+}
+
+.drag-over-border {
+  border: #fbbc05 dashed 2px;
+}
+
+.drag-transit {
+  border: #3500FF dashed 2px;
+}
+*/
+/* in-flight clone */
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+  text-align: center;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  pointer-events: none;
+}
+/* high-performance display:none; helper */
+.gu-hide {
+  left: -9999px !important;
+}
+/* added to mirrorContainer (default = body) while dragging */
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+/* added to the source element while its mirror is dragged */
+.gu-transit {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+  pointer-events: none;
+}

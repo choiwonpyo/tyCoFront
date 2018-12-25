@@ -1,0 +1,40 @@
+<div class="contentDiv">
+  <div class="contentMenuDiv" *ngIf="!contentService.isTest">
+    <button (click)="oneStepClicked()">1 단계</button>
+    <button (click)="twoStepClicked()" *ngIf="twoStepAvailable">2 단계</button>
+    <button (click)="threeStepClicked()" *ngIf="threeStepAvailable">3 단계</button>
+  </div>
+  <div class="contentShowDiv">
+    <div class="contentExampleDiv">
+      <div *ngIf="!contentService.isTest">
+        <button (click) = "speedChange('up')">속도 올리기</button>
+        <button (click) = "speedChange('down')">속도 내리기</button>
+        <button (click) = "pausePractice()">일시 중지</button>
+        <button (click) = "reStart()">다시 시작</button>
+        <span>제한시간: {{contentService.timeLimit}} 초</span>
+      </div>
+      <audio controls>
+        <source src="assets/music/Grandpapa_Eleven_Month.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+      <div class="writedDiaryDiv">
+        <span *ngFor = "let content of contentExample" class="writedDiary">{{content}}</span>
+      </div>
+      <div class="realContent">
+        <p class="keyboardShape" [ngStyle] ="contentService.keyboardStyle">{{contentService.currentInputContent}}</p>
+        <p class="inputDesc">{{contentService.currentInputContentDesc}}</p>
+      </div>
+      <div class="contentInformation">
+        <p>정답률: {{contentService.successPercentage}}%</p>
+        <p>맞은 갯수: {{contentService.successCount}}</p>
+        <p>틀린 갯수: {{contentService.falseCount}}</p>
+        <p>평균 속도: {{contentService.averageSecond.toFixed(3)}} 초</p>
+      </div>
+    </div>
+  </div>
+  <div class="contentInputDiv">
+    <input type="text" class="contentInput" placeholder="입력하세요!" (keyup)="readEnter($event)"/>
+  </div>
+  <app-speed-wagon [inputDialog]="information"></app-speed-wagon>
+  <app-start-test [testMessage]="contentService.testMessage" [isTest] = "contentService.isTest" (testStartClicked)="contentService.testStart()"></app-start-test>
+</div>

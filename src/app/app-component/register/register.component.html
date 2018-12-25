@@ -1,0 +1,24 @@
+<div class="register">
+  <div class="register_form">
+    <mat-form-field>
+          <input matInput placeholder="아이디" type="text" [(ngModel)]="registerData.userName"  (keyup)="userNameCheck()"/>
+    </mat-form-field>
+    <p class="error_message" *ngIf="error.userNameError">아이디는 4글자 이상이어야 합니다.</p>
+    <mat-form-field>
+          <input matInput placeholder="비밀 번호" type="password"  [(ngModel)]="registerData.password" (keyup)="checkPasswordCheck()"/>
+    </mat-form-field>
+     <p class="error_message" *ngIf="error.passwordLengthError">비밀번호 길이는 5글자 이상으로 해주세요</p>
+    <mat-form-field>
+          <input matInput placeholder="비밀 번호 확인" type="password"  [(ngModel)]="registerData.passwordCheck" (keyup)="checkPasswordCheck()"/>
+    </mat-form-field>
+    <p class="error_message" *ngIf="error.passwordCheckError">비밀번호와 비밀번호 확인이 다릅니다.</p>
+    <mat-form-field>
+          <input matInput placeholder="닉네임" type="text"  [(ngModel)]="registerData.nickName"  (keyup)="nickNameCheck()" (blur)="nickNameCheck()"/>
+    </mat-form-field>
+    <p class="error_message" *ngIf="error.nickNameError">닉네임은 2글자 이상이어야 합니다.</p>
+    <div class="register_button_div">
+      <button (click)="register()" type="submit">가입</button>
+      <button (click)="cancel()">취소</button>
+    </div>
+  </div>
+</div>

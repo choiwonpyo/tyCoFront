@@ -1,0 +1,21 @@
+<div class="homeOuterDiv">
+  <div class="topDiv">
+    <div class="logo">
+      <h1>TyCo</h1>
+      <h3>Typing Coding</h3>
+    </div>
+  </div>
+  <div class="middleDiv" [ngStyle] = "{flex: middleDivFlex}">
+    <button class="loginButton" *ngIf="!loginClicked && !registerClicked" (click)="loginButtonClick()">로그인</button>
+    <button class="registerButton" *ngIf="!registerClicked && !loginClicked" (click)="registerButtonClick()">회원가입</button>
+    <div class="loginFormDiv" *ngIf="loginClicked">
+      <app-login *ngIf="loginClicked" (cancelClickEvent)="cancelButtonClicked($event)"></app-login>
+    </div>
+    <div class="registerFormDiv" *ngIf="registerClicked">
+      <app-register *ngIf="registerClicked" (cancelClickEvent)="registerCancelButtonClicked($event)"></app-register>
+    </div>
+  </div>
+  <div class="bottomDiv">
+
+  </div>
+</div>

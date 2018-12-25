@@ -1,0 +1,42 @@
+<div class="containerOut">
+  <div class="container">
+      <div class="leftParent">
+        <div class="baseCommand">
+          <div class="layerTitle"> 명령들 </div>
+          <div  dragula="VAMPIRES" [(dragulaModel)] ="items" class="commandList" id="commandList">
+             <div *ngFor="let item of items" class="list-group-item">
+               <div *ngIf="item.getType() === studyNodeService.normalType">
+                  <app-normal-node [node]="item"></app-normal-node>
+               </div>
+               <div *ngIf="item.getType() === studyNodeService.forType">
+                 <app-for-node [forNode]="item" [canContain]="false"></app-for-node>
+               </div>
+             </div>
+          </div>
+        </div>
+        <div class="droppedCommand">
+            <div class="layerTitle"> 입력창<div class="playDiv"><button (click)="onPlayButtonClick()"><mat-icon>play_arrow</mat-icon></button></div></div>
+            <div  dragula="VAMPIRES" [(dragulaModel)] = "droppedItems" class="dropCommandList" id="dropCommandList">
+               <div *ngFor=" let item of droppedItems" class="list-group-item">
+                   <div *ngIf="item.getType() === studyNodeService.normalType">
+                      <app-normal-node [node]="item"></app-normal-node>
+                   </div>
+                   <div *ngIf="item.getType() === studyNodeService.forType">
+                      <app-for-node [forNode]="item" [canContain]="true"></app-for-node>
+                   </div>
+               </div>
+            </div>
+        </div>
+    </div>
+    <div class="rightParent">
+      <p *ngIf="!puttingCommand" class="inputInformation waiting"> 명령을 대기 중입니다.</p>
+      <p *ngIf="puttingCommand" class="inputInformation sending"> 명령을 전송 중입니다..</p>
+
+      <p class="inputInformation">왼쪽: left</p>
+       <p class="inputInformation">오른쪽: right</p>
+       <p class="inputInformation">위로: up</p>
+       <p class="inputInformation">아래로: down</p>
+      <input type="text" class="tyCoCommandInput" (keyup.enter) = "onKeyInputClick($event)"/>
+    </div>
+  </div>
+</div>

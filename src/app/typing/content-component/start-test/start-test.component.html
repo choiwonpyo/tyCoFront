@@ -1,0 +1,13 @@
+<div class="startTestDiv" [ngStyle] = "{right: right, top: top}">
+  <swal
+    #startTest
+    title="시험을 시작할까요?"
+    text="{{testMessage}}"
+    type="question"
+    [showCancelButton]="true"
+    [focusCancel]="true"
+    (confirm)="testStart()">
+</swal>
+  <button class="startTestButton" [swal] = "startTest" *ngIf="!isTest">시험 보기</button>
+  <p *ngIf="isTest" class="nowTesting">시험중!</p>
+</div>

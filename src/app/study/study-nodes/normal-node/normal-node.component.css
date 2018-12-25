@@ -1,0 +1,11 @@
+.normalSingleNode{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  background-color: #1864ab;
+  color: whitesmoke;
+  border-radius: 3px;
+  font-weight: 900;
+}

@@ -1,0 +1,74 @@
+.contentDiv {
+  width: 100%;
+  height: 100%;
+  background-color: #21252D;
+  border-radius: 10px;
+  display: block;
+  padding: 10px;
+}
+.contentShowDiv {
+  height: 80%;
+  width: 80%;
+  position: absolute;
+  left: 10%;
+  top: 7%;
+  border-radius: 10px;
+  background-color: #dee2e6;
+}
+.contentInputDiv{
+  position: absolute;
+  bottom: 30px;
+  left: 33%;
+}
+.contentInput{
+  height: 30px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 900;
+  width: 20em;
+}
+.contentShowDiv {
+  overflow: auto;
+}
+.contentExampleDiv {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+.writedDiaryDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.writedDiary {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-right: 10px;
+}
+.writedDiary:last-child {
+  color: red;
+}
+.realContent {
+  text-align: center;
+}
+.contentMenuDiv {
+  display: flex;
+  justify-content: center;
+}
+.keyboardShape {
+  margin-bottom: 0;
+  background-color: black;
+  width: 400px;
+  border-radius: 20px;
+  border: 7px solid black;
+  font-size: 30px;
+  padding: 20px;
+  font-weight: 900;
+  display: inline-block;
+}
+.inputDesc {
+  color: black;
+  font-weight: 900;
+  font-size: 25px;
+  margin: 0 auto;
+}

@@ -1,0 +1,12 @@
+<div class="forNode">
+  <div class="forNodeTitle">반복 <span *ngIf="canContain"><input  type="number" min="1" [(ngModel)] = "forNode.loopCount"/> 회</span></div>
+  <div *ngIf="canContain"><!-- only this is shown when it is "contatinable status"-->
+    <div  dragula="VAMPIRES" [(dragulaModel)] ="forNode.nodeList" class="forNodeListDiv">
+      <div *ngFor="let item of forNode.nodeList" class="forNodeListGroup">
+        <div *ngIf="item.getType() === studyNodeService.normalType">
+          <app-normal-node [node]="item"></app-normal-node>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

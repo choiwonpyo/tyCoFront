@@ -1,0 +1,13 @@
+.carAdventureSelector {
+  padding: 10px;
+  background-color: #1864ab;
+  display: flex;
+  flex-direction: row;
+}
+.carAdventureSelector div {
+  padding: 5px;
+  background-color: darkslateblue;
+  margin-left: 5px;
+  color: whitesmoke;
+  cursor: pointer;
+}

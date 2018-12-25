@@ -1,0 +1,6 @@
+<div class="menuPartDiv">
+  <div *ngFor="let menu of menuList" class="menuItemDiv" [routerLink] = "[menu.routerUrl]">
+    <img [src] = "menu.img" class="menuItemDivImg">
+    <p class="menuItemDivName">{{menu.name}}</p>
+  </div>
+</div>

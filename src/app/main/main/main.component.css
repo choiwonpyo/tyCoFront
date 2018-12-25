@@ -1,0 +1,23 @@
+.mainComponentSkeleton {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.containerHeader {
+  background-color: #21252D;
+}
+.main-nav-title {
+  font-weight: 900;
+  font-sizes: 20px;
+  color: #ffffff;
+}
+.vert {
+  color: #ffffff;
+}
+.bodyDiv{
+  flex: 1;
+}
+.headProfile {
+  position: absolute;
+  right: 10px;
+}

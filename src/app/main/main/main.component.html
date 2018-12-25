@@ -1,0 +1,36 @@
+<div class="mainComponentSkeleton">
+  <mat-toolbar class="containerHeader">
+    <mat-toolbar-row>
+      <span class="main-nav-title">TyCo</span>
+      <span>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon class="vert">more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>cancel_presentation</mat-icon>
+            <span>로그아웃</span>
+          </button>
+          <button mat-menu-item (click)="toMain()">
+            <mat-icon>undo</mat-icon>
+            <span>메인으로</span>
+          </button>
+        </mat-menu>
+      </span>
+      <div class="headProfile">
+        <span class="main-nav-title">사용자</span>
+        <button mat-icon-button [matMenuTriggerFor]="hello">
+          <mat-icon class="vert">art_track</mat-icon>
+        </button>
+        <mat-menu #hello>
+          <span mat-menu-item>이름: {{userInformation? userInformation.nickName: ''}}</span>
+          <span mat-menu-item>타이핑 점수: {{userInformation? userInformation.typingScore: '0'}}</span>
+          <span mat-menu-item>문제풀이 점수: 0</span>
+        </mat-menu>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div class="bodyDiv">
+    <router-outlet></router-outlet>
+  </div>
+</div>

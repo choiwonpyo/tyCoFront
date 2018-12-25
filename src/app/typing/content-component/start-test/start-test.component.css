@@ -1,0 +1,18 @@
+.startTestDiv {
+  z-index: 99999;
+  position: absolute;
+}
+.startTestButton {
+  padding: 15px;
+  font-size: 1.5em;
+  font-weight: 900;
+  border-radius: 18px;
+  /* background: #5f3dc4; */
+  /* color: white; */
+  border: 1px solid;
+}
+.nowTesting {
+  font-size: 20px;
+  color: red;
+  font-weight: 900;
+}

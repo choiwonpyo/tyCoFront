@@ -1,0 +1,11 @@
+<div class="mapParent" *ngIf="tutorial1">
+  <div class="resultTextDiv" *ngIf="resultTextVisible"><span *ngIf="result" class="sText">성공</span><span *ngIf="!result" class="fText">실패</span></div>
+  <div class="mapBody" [ngStyle] = "{width: map.width + 'px', height: map.height + 'px', position: 'relative', background: '#1c7ed6'}">
+    <div *ngFor="let obstacles of componentManager.getAllObstacle()" [ngStyle] = "{position: 'absolute', left: obstacles.x + 'px', top: obstacles.y + 'px', width: obstacles.width + 'px', height: obstacles.height + 'px', zIndex: character.zIndex}">
+      <img [src]="obstacles.imgSrc" [ngStyle]="{height: '100%', width: '100%'}"/>
+    </div>
+    <div class="character" [ngStyle]="{left: character.x + 'px', top: character.y + 'px', position: 'absolute', width: character.width + 'px', height: character.height + 'px', zIndex: character.zIndex}">
+      <img [src]="character.imgSrc" [ngStyle]="{height: '100%', width: '100%'}"/>
+    </div>
+  </div>
+</div>

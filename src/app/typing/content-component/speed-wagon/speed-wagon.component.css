@@ -1,0 +1,15 @@
+.speedWagonDiv {
+  z-index: 99999;
+  position: absolute;
+}
+.dialogDiv {
+  position: absolute;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+.speedWagon {
+  width: 150px;
+  height: 300px;
+}

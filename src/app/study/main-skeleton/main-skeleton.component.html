@@ -1,0 +1,43 @@
+<div class="containerOut">
+  <div class="container">
+      <div class="leftParent">
+        <div class="baseCommand">
+          <div class="layerTitle"> 명령들 </div>
+          <div  dragula="VAMPIRES" [(dragulaModel)] ="items" class="commandList" id="commandList">
+             <div *ngFor="let item of items" class="list-group-item">
+               <div *ngIf="item.getType() === studyNodeService.normalType">
+                  <app-normal-node [node]="item"></app-normal-node>
+               </div>
+               <div *ngIf="item.getType() === studyNodeService.forType">
+                 <app-for-node [forNode]="item" [canContain]="false"></app-for-node>
+               </div>
+             </div>
+          </div>
+        </div>
+        <div class="droppedCommand">
+            <div class="layerTitle"> 입력창<div class="playDiv"><button (click)="onPlayButtonClick()"><mat-icon>play_arrow</mat-icon></button></div></div>
+            <div  dragula="VAMPIRES" [(dragulaModel)] = "droppedItems" class="dropCommandList" id="dropCommandList">
+               <div *ngFor=" let item of droppedItems" class="list-group-item">
+                   <div *ngIf="item.getType() === studyNodeService.normalType">
+                      <app-normal-node [node]="item"></app-normal-node>
+                   </div>
+                   <div *ngIf="item.getType() === studyNodeService.forType">
+                      <app-for-node [forNode]="item" [canContain]="true"></app-for-node>
+                   </div>
+               </div>
+            </div>
+        </div>
+    </div>
+    <div class="rightParent">
+      <app-car-adventure-selector (stage)="carStageSelected($event)"></app-car-adventure-selector>
+      <app-tutorial1 *ngIf="carStage === 1"></app-tutorial1>
+      <app-stage1 *ngIf="carStage === 2"></app-stage1>
+      <app-stage2 *ngIf="carStage === 3"></app-stage2>
+      <app-stage3 *ngIf="carStage === 4"></app-stage3>
+      <app-stage4 *ngIf="carStage === 5"></app-stage4>
+      <app-stage5 *ngIf="carStage === 6"></app-stage5>
+      <app-stage6 *ngIf="carStage === 7"></app-stage6>
+      <app-stage7 *ngIf="carStage === 8"></app-stage7>
+    </div>
+  </div>
+</div>

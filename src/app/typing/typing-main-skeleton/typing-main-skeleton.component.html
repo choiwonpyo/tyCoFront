@@ -1,0 +1,14 @@
+<div class="containerOut">
+  <div class="container">
+    <div class="leftParent">
+      <button class="baseButton leftButton" (click)="goToBase()">기초 다지기</button>
+      <button class="sentenceButton leftButton" (click)="goToWord()">단어 연습</button>
+      <button class="moreHardButton leftButton" (click)="goToParagraph()">문장 연습</button>
+    </div>
+    <div class="rightParent">
+      <div class="rightContentDiv">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
